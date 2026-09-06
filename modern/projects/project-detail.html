@@ -28,9 +28,9 @@
         .related-card:hover .img-zoom { transform: scale(1.04); }
         .related-card { border: 1px solid #e9e9e9; border-radius: 20px; background: #fff; overflow: hidden; transition: box-shadow 0.5s; }
         .related-card:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
-        .gallery-item { margin: 0; overflow: hidden; border-radius: 16px; }
+        .gallery-item { margin: 0; overflow: hidden; border-radius: 12px; }
         .gallery-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
-        .gallery-item:nth-child(even) { margin-top: 56px; }
+        .gallery-item:nth-child(even) { margin-top: 28px; }
         @media (max-width: 767px) {
             #project-gallery { grid-template-columns: 1fr !important; }
             .gallery-item:nth-child(even) { margin-top: 0; }
@@ -116,14 +116,10 @@
                 <aside style="border:1px solid #e9e9e9; border-radius:20px; background:#fff; padding:28px;">
                     <p style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#777; font-family:'Inter',sans-serif;">Project Details</p>
                     <div id="project-stats" style="margin-top:12px;"></div>
+                    <div id="project-gallery" style="margin-top:32px; display:grid; gap:16px; grid-template-columns: repeat(2, 1fr); align-items:start;"></div>
                 </aside>
             </div>
         </article>
-
-        <!-- PROJECT GALLERY -->
-        <section style="max-width:1400px; margin:0 auto; padding:0 24px 96px;">
-            <div id="project-gallery" style="max-width:840px; margin:0 auto; display:grid; gap:24px; grid-template-columns: repeat(2, 1fr); align-items:start;"></div>
-        </section>
 
         <!-- AMENITIES -->
         <section style="border-top:1px solid #e9e9e9; background:rgba(249,249,249,0.6); padding:96px 0;">

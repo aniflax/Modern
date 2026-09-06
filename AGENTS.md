@@ -18,6 +18,9 @@
 - No build step — direct HTML/CSS/JS edits.
 - Keep navigation and asset paths consistent across homepage variants (`index.html`, `index-2.html`, etc.).
 
+## Ignored — Never Push
+- `unitya/` — local design inspiration folder. Always gitignored. Never commit or push. Keep in `.gitignore` (`unitya/`, `unitya`, `UNITYA/`).
+
 ## Agent Instructions
 - Read this file at session start.
 - Verify `git status` before and after every change set.

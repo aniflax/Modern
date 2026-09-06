@@ -38,6 +38,9 @@
     <link rel="stylesheet" type="text/css" href="plugins/revolution/revolution/css/settings.css">
     <!-- REVOLUTION NAVIGATION STYLE -->
     <link rel="stylesheet" type="text/css" href="plugins/revolution/revolution/css/navigation.css">
+    <!-- ARKIT SERVICES (exact copy) -->
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-arkit.min.css">
+    <link rel="stylesheet" type="text/css" href="css/arkit-services.css">
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,800,800i,900" rel="stylesheet">
@@ -446,120 +449,62 @@
             </div>
             <!-- WELCOME  SECTION END -->
 
-            <!-- UNITYA SERVICES SECTION START — adapted from unitya/src/components/site/services.tsx with Modern font -->
-            <div class="section-full p-t80 p-b80 bg-white unitya-services">
+            <!-- ARKIT SERVICES SECTION — exact copy from arkit/index.html:263, same text/font/background/images -->
+            <section class="service-section bg-grey padding">
+                <div class="dots"></div>
                 <div class="container">
-                    <!-- header exactly as Arkit — Services / Our speciallization -->
                     <div class="section-heading text-center mb-40">
-                        <span style="font-family:'Poppins',sans-serif;">Services</span>
-                        <h2 style="font-family:'Poppins',sans-serif;">Our speciallization</h2>
+                        <span>Services</span>
+                        <h2>Our speciallization</h2>
                     </div>
-
-                    <div class="row">
-                        <!-- LEFT: list -->
-                        <div class="col-lg-7 col-md-12">
-                            <div style="height:1px; background:#e9e9e9; margin-bottom:4px;"></div>
-                            <div class="unitya-services-list">
-                                <div class="unitya-service-row active" data-index="0">
-                                    <div class="d-flex align-items-start gap-3" style="gap:24px; padding:32px 8px;">
-                                        <span style="width:40px; padding-top:6px; font-family:'Poppins',sans-serif; font-size:11px; letter-spacing:0.2em; color:#f5bf23; font-weight:700;">01</span>
-                                        <div style="flex:1;">
-                                            <h3 style="font-family:'Poppins',sans-serif; font-size:34px; font-weight:800; text-transform:uppercase; line-height:1; letter-spacing:-1px; color:#111; margin:0;">Architecture</h3>
-                                            <p style="font-family:'Poppins',sans-serif; font-size:13px; font-weight:300; line-height:1.7; color:#777; max-width:420px; margin:12px 0 0;">Thoughtful architecture designed around people, place and purpose.</p>
-                                        </div>
-                                        <span class="unitya-arrow" style="padding-top:8px; font-size:18px; color:#111; transition:.3s;">→</span>
-                                    </div>
-                                    <div class="d-block d-lg-none" style="padding:0 0 24px;"><img src="images/services/01-architecture.jpg" alt="Architecture" style="width:100%; height:260px; object-fit:cover;"></div>
+                    <!--/.section-heading-->
+                    <div class="service-wrap row">
+                        <div class="col-lg-4 col-sm-6 padding-15">
+                            <div class="service-item">
+                                <div class="service-thumb">
+                                    <img src="images/arkit-services/service-1.jpg" alt="thumb">
                                 </div>
-                                <div class="unitya-service-row" data-index="1">
-                                    <div class="d-flex align-items-start" style="gap:24px; padding:32px 8px;">
-                                        <span style="width:40px; padding-top:6px; font-family:'Poppins',sans-serif; font-size:11px; letter-spacing:0.2em; color:#999; font-weight:700;">02</span>
-                                        <div style="flex:1;">
-                                            <h3 style="font-family:'Poppins',sans-serif; font-size:34px; font-weight:800; text-transform:uppercase; line-height:1; letter-spacing:-1px; color:#111; margin:0;">Interior Design</h3>
-                                            <p style="font-family:'Poppins',sans-serif; font-size:13px; font-weight:300; line-height:1.7; color:#777; max-width:420px; margin:12px 0 0;">Refined interiors, materials, lighting and details.</p>
-                                        </div>
-                                        <span class="unitya-arrow" style="padding-top:8px; font-size:18px; color:#999; transition:.3s;">→</span>
-                                    </div>
-                                    <div class="d-block d-lg-none" style="padding:0 0 24px;"><img src="images/services/02-interior.jpg" alt="Interior Design" style="width:100%; height:260px; object-fit:cover;"></div>
-                                </div>
-                                <div class="unitya-service-row" data-index="2">
-                                    <div class="d-flex align-items-start" style="gap:24px; padding:32px 8px;">
-                                        <span style="width:40px; padding-top:6px; font-family:'Poppins',sans-serif; font-size:11px; letter-spacing:0.2em; color:#999; font-weight:700;">03</span>
-                                        <div style="flex:1;">
-                                            <h3 style="font-family:'Poppins',sans-serif; font-size:34px; font-weight:800; text-transform:uppercase; line-height:1; letter-spacing:-1px; color:#111; margin:0;">Exterior Design</h3>
-                                            <p style="font-family:'Poppins',sans-serif; font-size:13px; font-weight:300; line-height:1.7; color:#777; max-width:420px; margin:12px 0 0;">Complete exterior environments, façades and landscape integration.</p>
-                                        </div>
-                                        <span class="unitya-arrow" style="padding-top:8px; font-size:18px; color:#999; transition:.3s;">→</span>
-                                    </div>
-                                    <div class="d-block d-lg-none" style="padding:0 0 24px;"><img src="images/services/03-exterior.jpg" alt="Exterior Design" style="width:100%; height:260px; object-fit:cover;"></div>
-                                </div>
-                                <div class="unitya-service-row" data-index="3">
-                                    <div class="d-flex align-items-start" style="gap:24px; padding:32px 8px;">
-                                        <span style="width:40px; padding-top:6px; font-family:'Poppins',sans-serif; font-size:11px; letter-spacing:0.2em; color:#999; font-weight:700;">04</span>
-                                        <div style="flex:1;">
-                                            <h3 style="font-family:'Poppins',sans-serif; font-size:34px; font-weight:800; text-transform:uppercase; line-height:1; letter-spacing:-1px; color:#111; margin:0;">Construction</h3>
-                                            <p style="font-family:'Poppins',sans-serif; font-size:13px; font-weight:300; line-height:1.7; color:#777; max-width:420px; margin:12px 0 0;">Full-service construction with precision, quality and accountability.</p>
-                                        </div>
-                                        <span class="unitya-arrow" style="padding-top:8px; font-size:18px; color:#999; transition:.3s;">→</span>
-                                    </div>
-                                    <div class="d-block d-lg-none" style="padding:0 0 24px;"><img src="images/services/04-construction.jpg" alt="Construction" style="width:100%; height:260px; object-fit:cover;"></div>
-                                </div>
-                                <div class="unitya-service-row" data-index="4">
-                                    <div class="d-flex align-items-start" style="gap:24px; padding:32px 8px;">
-                                        <span style="width:40px; padding-top:6px; font-family:'Poppins',sans-serif; font-size:11px; letter-spacing:0.2em; color:#999; font-weight:700;">05</span>
-                                        <div style="flex:1;">
-                                            <h3 style="font-family:'Poppins',sans-serif; font-size:34px; font-weight:800; text-transform:uppercase; line-height:1; letter-spacing:-1px; color:#111; margin:0;">Real Estate</h3>
-                                            <p style="font-family:'Poppins',sans-serif; font-size:13px; font-weight:300; line-height:1.7; color:#777; max-width:420px; margin:12px 0 0;">Premium properties, development opportunities and real-estate services.</p>
-                                        </div>
-                                        <span class="unitya-arrow" style="padding-top:8px; font-size:18px; color:#999; transition:.3s;">→</span>
-                                    </div>
-                                    <div class="d-block d-lg-none" style="padding:0 0 24px;"><img src="images/services/05-realestate.jpg" alt="Real Estate" style="width:100%; height:260px; object-fit:cover;"></div>
+                                <div class="service-content">
+                                    <i class="fas fa-drafting-compass"></i>
+                                    <h3>Architecture</h3>
+                                    <p>We offer a fully integrated service that complements the architectural concept, we ensure all projects.</p>
+                                    <a href="#">View Projects</a>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- RIGHT: sticky image (desktop) -->
-                        <div class="col-lg-5 d-none d-lg-block">
-                            <div class="unitya-services-sticky" style="position:sticky; top:110px; height:520px; overflow:hidden; background:#f5f5f5; border:1px solid #eee;">
-                                <img src="images/services/01-architecture.jpg" alt="Architecture" data-svc="0" class="unitya-svc-img active" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:1; transform:scale(1); transition:opacity .7s ease, transform .7s ease;">
-                                <img src="images/services/02-interior.jpg" alt="Interior Design" data-svc="1" class="unitya-svc-img" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transform:scale(1.05); transition:opacity .7s ease, transform .7s ease;">
-                                <img src="images/services/03-exterior.jpg" alt="Exterior Design" data-svc="2" class="unitya-svc-img" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transform:scale(1.05); transition:opacity .7s ease, transform .7s ease;">
-                                <img src="images/services/04-construction.jpg" alt="Construction" data-svc="3" class="unitya-svc-img" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transform:scale(1.05); transition:opacity .7s ease, transform .7s ease;">
-                                <img src="images/services/05-realestate.jpg" alt="Real Estate" data-svc="4" class="unitya-svc-img" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transform:scale(1.05); transition:opacity .7s ease, transform .7s ease;">
-                                <div style="position:absolute; inset:0; display:flex; align-items:flex-end; padding:20px; background:linear-gradient(to top, rgba(0,0,0,.45) 0%, transparent 50%);">
-                                    <span class="unitya-svc-label" style="font-family:'Poppins',sans-serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:#fff; font-weight:700;">Architecture</span>
+                        <!--Item 1-->
+                        <div class="col-lg-4 col-sm-6 padding-15">
+                            <div class="service-item">
+                                <div class="service-thumb">
+                                    <img src="images/arkit-services/service-2.jpg" alt="thumb">
+                                </div>
+                                <div class="service-content">
+                                    <i class="fas fa-couch"></i>
+                                    <h3>Interior Design</h3>
+                                    <p>We offer a fully integrated service that complements the architectural concept, we ensure all projects.</p>
+                                    <a href="#">View Projects</a>
                                 </div>
                             </div>
                         </div>
+                        <!--Item 2-->
+                        <div class="col-lg-4 col-sm-6 padding-15">
+                            <div class="service-item">
+                                <div class="service-thumb">
+                                    <img src="images/arkit-services/service-3.jpg" alt="thumb">
+                                </div>
+                                <div class="service-content">
+                                    <i class="fas fa-industry"></i>
+                                    <h3>Commercial Design</h3>
+                                    <p>We offer a fully integrated service that complements the architectural concept, we ensure all projects.</p>
+                                    <a href="#">View Projects</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Item 3-->
                     </div>
                 </div>
-            </div>
-            <style>
-                .unitya-service-row { border-bottom:1px solid #e9e9e9; cursor:pointer; transition:background .3s, padding-left .4s; }
-                .unitya-service-row:hover { background:#fafafa; padding-left:8px; }
-                .unitya-service-row.active { background:#fffbe6; }
-                .unitya-service-row.active span:first-child { color:#f5bf23 !important; }
-                .unitya-service-row.active .unitya-arrow { color:#111 !important; transform:translateX(4px); }
-                @media (max-width: 991px){ .unitya-service-row h3{ font-size:26px !important; } }
-            </style>
-            <script>
-                document.addEventListener('DOMContentLoaded', function(){
-                    var rows = document.querySelectorAll('.unitya-service-row');
-                    var imgs = document.querySelectorAll('.unitya-svc-img');
-                    var label = document.querySelector('.unitya-svc-label');
-                    var names = ['Architecture','Interior Design','Exterior Design','Construction','Real Estate'];
-                    function activate(i){
-                        rows.forEach(function(r, idx){ r.classList.toggle('active', idx===i); });
-                        imgs.forEach(function(img){ var on = img.getAttribute('data-svc')==i; img.style.opacity = on?'1':'0'; img.style.transform = on?'scale(1)':'scale(1.05)'; });
-                        if(label) label.textContent = names[i] || '';
-                    }
-                    rows.forEach(function(row){
-                        row.addEventListener('mouseenter', function(){ activate(parseInt(row.getAttribute('data-index')||'0',10)); });
-                        row.addEventListener('click', function(){ activate(parseInt(row.getAttribute('data-index')||'0',10)); });
-                    });
-                });
-            </script>
-            <!-- UNITYA SERVICES SECTION END -->
+            </section>
+            <!-- ARKIT SERVICES SECTION END -->
 
             <!-- LATEST PRJECTS SLIDER START -->
             <div class="section-full p-t80 p-lr80 latest_project-outer square_shape3">

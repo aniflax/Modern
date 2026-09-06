@@ -67,6 +67,8 @@
         /* Our approach circle — same as Services heading */
         .approach-label { position: relative; display: inline-block; z-index: 1; }
         .approach-label:before { background-color: transparent; position: absolute; content: ""; width: 30px; height: 30px; left: -15px; top: -10px; border: 3px solid #111; opacity: 0.15; z-index: -1; }
+        html { scroll-behavior: smooth; }
+        #about, #founder, #services, #projects, #media, #contact { scroll-margin-top: 90px; }
     </style>
 
 </head>
@@ -100,67 +102,13 @@
                         <!-- ETRA Nav -->
                         <!-- MAIN Vav -->
                         <div class="header-nav navbar-collapse collapse">
-                            <ul class=" nav navbar-nav">
-                                <li class="active">
-                                    <a href="javascript:;">Home</a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="index.html">Home-1</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-2.html">Home-2</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-3.html">Home-3</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-5.html">Home-5</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">Pages</a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="about-1.html">About us</a>
-                                        </li>
-                                        <li>
-                                            <a href="contact-1.html">Contact us</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">News</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="news-grid.html">Grid</a></li>
-                                        <li><a href="news-listing.html">Listing</a></li>
-                                        <li><a href="news-masonry.html">Masonry</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">Works</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="work-grid.html">Grid</a></li>
-                                        <li><a href="work-masonry.html">Masonry</a></li>
-                                        <li><a href="work-carousel.html">Carousel</a></li>
-                                        <li><a href="project-detail.html">Project Detail</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">Post detail</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="post-image.html">Image</a></li>
-                                        <li><a href="post-gallery.html">Gallery</a></li>
-                                        <li><a href="post-video.html">Video</a></li>
-                                        <li><a href="post-right-sidebar.html">Right Sidebar</a></li>
-                                    </ul>
-                                </li>
-                                <li class="submenu-direction">
-                                    <a href="javascript:;">Shortcodes</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="accordian.html">All Elements</a></li>
-                                    </ul>
-                                </li>
+                            <ul class="nav navbar-nav">
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#founder">Founder</a></li>
+                                <li><a href="#projects">Projects</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#media">Media</a></li>
+                                <li><a href="#contact">Contact</a></li>
                             </ul>
                         </div>
 
@@ -392,7 +340,7 @@
             <!-- SLIDER END -->
 
             <!-- WELCOME SECTION START -->
-            <div class="section-full clearfix p-t80  bg-gray">
+            <div id="about" class="section-full clearfix p-t80  bg-gray">
                 <div class="container">
                     <div class="section-content">
                         <div class="row">
@@ -452,8 +400,33 @@
             </div>
             <!-- WELCOME  SECTION END -->
 
+            <!-- FOUNDER SECTION START -->
+            <section id="founder" class="section-full p-t80 p-b80 bg-white">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 col-md-12 m-b30">
+                            <div class="wt-media" style="position:relative; overflow:hidden;">
+                                <img src="images/gallery/pic1.jpg" alt="Founder" style="width:100%; display:block;">
+                                <div style="position:absolute; left:20px; bottom:20px; background:#111; color:#fff; padding:14px 18px;">
+                                    <span style="font-family:'Poppins',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; opacity:.7;">Founder & Principal</span>
+                                    <strong style="display:block; font-family:'Poppins',sans-serif; font-size:16px; font-weight:700; letter-spacing:0.5px; margin-top:4px;">UNITYA LIVING</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-12">
+                            <span class="approach-label font-12 font-weight-700 d-block m-b10 text-uppercase" style="letter-spacing:4px; color:#111;">Founder</span>
+                            <h2 class="font-36 text-uppercase" style="font-family:'Poppins',sans-serif; font-weight:800; letter-spacing:-1px; line-height:1; color:#111;">Vision led by<br>experience</h2>
+                            <div class="wt-separator-outer m-t10 m-b20"><div class="wt-separator bg-black"></div></div>
+                            <p style="font-family:'Poppins',sans-serif; font-size:15px; line-height:1.8; color:#555;">Our founder brings two decades of practice across architecture, interiors and development — guiding every project with a hands-on approach to proportion, material and light. The studio was built on the belief that good spaces start with good thinking and endure through careful craftsmanship.</p>
+                            <p style="font-family:'Poppins',sans-serif; font-size:14px; line-height:1.7; color:#777; font-style:italic; border-left:3px solid #111; padding-left:16px; margin-top:20px;">“We design with restraint. Every line has a purpose, every material a reason to be there.”</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- FOUNDER SECTION END -->
+
             <!-- ARKIT SERVICES SECTION — exact copy from arkit/index.html:263, same text/font/background/images -->
-            <section class="service-section bg-grey padding">
+            <section id="services" class="service-section bg-grey padding">
                 <div class="dots"></div>
                 <div class="container">
                     <div class="section-heading text-center mb-40">
@@ -510,7 +483,7 @@
             <!-- ARKIT SERVICES SECTION END -->
 
             <!-- LATEST PRJECTS SLIDER START -->
-            <div class="section-full p-t80 p-lr80 latest_project-outer square_shape3">
+            <div id="projects" class="section-full p-t80 p-lr80 latest_project-outer square_shape3">
 
                 <!-- TITLE START -->
                 <div class="section-head text-left">
@@ -678,7 +651,7 @@
 
 
             <!-- BLOG SECTION START -->
-            <div class="section-full p-t80 clearfix bg-repeat" style="background-image:url(images/background/ptn-1.png);">
+            <div id="media" class="section-full p-t80 clearfix bg-repeat" style="background-image:url(images/background/ptn-1.png);">
                 <div class="container">
                     <div class="section-content">
                         <!-- TITLE START -->
@@ -999,7 +972,7 @@
 
 
         <!-- FOOTER START -->
-        <footer class="site-footer   footer-dark footer-wide relative overflow-hide">
+        <footer id="contact" class="site-footer   footer-dark footer-wide relative overflow-hide">
             <div class="footer-bottom overlay-wraper">
                 <div class="overlay-main bg-black" style="opacity:0;"></div>
                 <div class="container p-t30">

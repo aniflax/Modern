@@ -86,12 +86,10 @@
         .lp-card-cat { position: absolute; left: 14px; top: 14px; z-index: 2; background: rgba(255,255,255,0.94); color: #111; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; font-family: 'Inter', sans-serif; padding: 6px 12px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
         .lp-card-body { padding: 18px 20px 20px; }
         .lp-card-body h3 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 17px; line-height: 1.3; letter-spacing: -0.01em; text-transform: uppercase; color: #111; margin: 0; }
-        .lp-card-body p { margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #777; font-family: 'Inter', sans-serif; }
         .lp-card-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; padding-top: 14px; border-top: 1px solid #efefef; }
         .lp-card-foot .meta { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #999; font-family: 'Inter', sans-serif; }
-        .lp-card-link { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; color: #111; font-family: 'Inter', sans-serif; }
-        .lp-card-link .arrow { transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); }
-        .lp-card:hover .lp-card-link .arrow { transform: translateX(4px); }
+        .lp-card-view { display: inline-flex; align-items: center; justify-content: center; padding: 8px 18px; background: transparent; border: 1px solid #111; border-radius: 999px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; color: #111; font-family: 'Inter', sans-serif; transition: background 0.3s ease, color 0.3s ease; }
+        .lp-card:hover .lp-card-view { background: #111; color: #fff; }
         /* Lifestyle card on hero — hidden on mobile as Unitya */
         @media (max-width: 768px){ .unitya-lifestyle-hero-card { display:none !important; } }
     </style>
@@ -605,10 +603,9 @@
                             </div>
                             <div class="lp-card-body">
                                 <h3>Hillcrest Residence</h3>
-                                <p>A single-volume family home planned around morning light and a long view of the hills.</p>
                                 <div class="lp-card-foot">
                                     <span class="meta">Paters Hill · 2025</span>
-                                    <span class="lp-card-link">View <span class="arrow">→</span></span>
+                                    <span class="lp-card-view">View</span>
                                 </div>
                             </div>
                         </a>
@@ -619,10 +616,9 @@
                             </div>
                             <div class="lp-card-body">
                                 <h3>Nest Apartments</h3>
-                                <p>Twelve apartments on a tight corner site, with a shared terrace and a planted facade.</p>
                                 <div class="lp-card-foot">
                                     <span class="meta">Bicholi Mardana · 2025</span>
-                                    <span class="lp-card-link">View <span class="arrow">→</span></span>
+                                    <span class="lp-card-view">View</span>
                                 </div>
                             </div>
                         </a>
@@ -633,10 +629,9 @@
                             </div>
                             <div class="lp-card-body">
                                 <h3>The Studio Loft</h3>
-                                <p>A live-work loft where structure stays exposed and every material ages well under real use.</p>
                                 <div class="lp-card-foot">
                                     <span class="meta">RNT Marg · 2025</span>
-                                    <span class="lp-card-link">View <span class="arrow">→</span></span>
+                                    <span class="lp-card-view">View</span>
                                 </div>
                             </div>
                         </a>
@@ -647,10 +642,9 @@
                             </div>
                             <div class="lp-card-body">
                                 <h3>Café Cotta</h3>
-                                <p>A neighbourhood café with a daylight-soaked counter and an open kitchen at the heart of the room.</p>
                                 <div class="lp-card-foot">
                                     <span class="meta">Saket Square · 2026</span>
-                                    <span class="lp-card-link">View <span class="arrow">→</span></span>
+                                    <span class="lp-card-view">View</span>
                                 </div>
                             </div>
                         </a>

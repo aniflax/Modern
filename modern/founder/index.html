@@ -20,6 +20,8 @@
     <style>
         .display { font-family: 'Poppins', sans-serif; font-weight: 700; line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase; }
         .eyebrow { font-size: 0.6875rem; letter-spacing: 0.18em; text-transform: uppercase; color: #777; font-family: 'Inter', sans-serif; }
+        .founder-panel { border: 1px solid #e9e9e9; border-radius: 24px; background: #fff; box-shadow: 0 16px 40px rgba(0,0,0,0.05); }
+        .founder-quote-mark { position: absolute; left: 6px; top: -12px; font-family: 'Instrument Serif', serif; font-size: 28px; line-height: 1; color: rgba(17,17,17,0.14); }
         html { scroll-behavior: smooth; }
     </style>
 </head>
@@ -72,33 +74,50 @@
 
     <div class="page-content">
         <!-- PAGE HERO -->
-        <section style="position:relative; display:flex; min-height:40vh; align-items:flex-end; overflow:hidden; background:#000;">
+        <section style="position:relative; display:flex; min-height:32vh; align-items:flex-end; overflow:hidden; background:#000;">
             <img src="../images/our-story/hero-building.jpg" alt="Modern white residential building against a blue sky" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" loading="eager">
             <div style="position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.25) 100%);"></div>
-            <div style="position:relative; z-index:1; width:100%; max-width:1400px; margin:0 auto; padding:128px 24px 64px;">
-                <p style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.8); font-family:'Inter',sans-serif;">From the founder</p>
-                <h1 class="display" style="margin-top:16px; max-width:22ch; font-size: clamp(1.5rem,3.2vw,2.4rem); color:#fff;">To our residents<br>and future neighbours.</h1>
+            <div style="position:relative; z-index:1; width:100%; max-width:1400px; margin:0 auto; padding:96px 24px 40px;">
+                <p style="margin-bottom:12px; font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:rgba(255,255,255,0.8); font-family:'Inter',sans-serif;">From the founder</p>
+                <h1 class="display" style="max-width:22ch; font-size: clamp(1.5rem,3.2vw,2.4rem); line-height:1.05; color:#fff;">To our residents<br>and future neighbours.</h1>
+                <p style="margin-top:16px; max-width:36ch; font-size:15px; line-height:1.6; color:rgba(255,255,255,0.78); font-family:'Inter',sans-serif;">A note on why we build with patience, restraint and long-term value in mind.</p>
             </div>
         </section>
 
         <!-- FOUNDER LETTER -->
-        <section style="max-width:1400px; margin:0 auto; padding:96px 24px;">
-            <div style="display:grid; gap:48px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items:center;">
-                <div style="display:flex; justify-content:center;">
-                    <div style="overflow:hidden; border-radius:20px; border:1px solid #e9e9e9; max-width:380px; width:100%;">
-                        <img src="../images/our-story/philosophy.jpg" alt="Rohan Astoliya, Founder of Unitya Living" style="width:100%; aspect-ratio:4/5; max-height:320px; object-fit:cover; display:block; object-position:top;">
+        <section style="max-width:1400px; margin:0 auto; padding:88px 24px 96px;">
+            <div style="display:grid; gap:24px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items:start;">
+                <div style="display:flex; flex-direction:column; gap:24px;">
+                    <div class="founder-panel" style="overflow:hidden;">
+                        <div style="padding:14px 14px 0;">
+                            <div style="overflow:hidden; border-radius:18px;">
+                                <img src="../images/our-story/philosophy.jpg" alt="Rohan Astoliya, Founder of Unitya Living" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block; object-position:top;">
+                            </div>
+                        </div>
+                        <div style="padding:22px 24px 24px;">
+                            <p class="eyebrow">Rohan Astoliya</p>
+                            <h2 class="display" style="margin-top:10px; font-size: clamp(1.5rem,2.6vw,2rem); color:#111;">Founder, Unitya Living</h2>
+                            <p style="margin-top:14px; max-width:34ch; font-size:15px; line-height:1.7; color:#777; font-family:'Inter',sans-serif;">A builder focused on measured growth, durable details and homes that still feel right years later.</p>
+                        </div>
                     </div>
-                    <div style="margin-top:24px; border-left:1px solid #e9e9e9; padding-left:24px;">
-                        <p class="display" style="font-size:20px; color:#111;">Rohan Astoliya</p>
-                        <p style="margin-top:4px; font-size:14px; color:#777; font-family:'Inter',sans-serif;">Founder, Unitya Living</p>
+                    <div style="display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+                        <div class="founder-panel" style="padding:22px;">
+                            <p class="eyebrow">Principle</p>
+                            <p style="margin-top:12px; font-size:15px; line-height:1.7; color:#111; font-family:'Inter',sans-serif;">Build slowly enough to make the right decisions, and quickly enough to honor the city we work in.</p>
+                        </div>
+                        <div class="founder-panel" style="padding:22px; background:#111;">
+                            <p style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.55); font-family:'Inter',sans-serif;">Focus</p>
+                            <p style="margin-top:12px; font-size:15px; line-height:1.7; color:#fff; font-family:'Inter',sans-serif;">Architecture, interiors and homes that hold their character under real use.</p>
+                        </div>
                     </div>
                 </div>
-                <div style="display:flex; flex-direction:column; justify-content:center;">
+                <div class="founder-panel" style="padding:32px; display:flex; flex-direction:column; justify-content:center;">
                     <p style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#777; font-family:'Inter',sans-serif;">A letter from the founder</p>
                     <h2 class="display" style="margin-top:24px; font-size: clamp(1.3rem,2.6vw,1.9rem); color:#111;">Built with patience,<br>not haste.</h2>
                     <div style="margin-top:32px; display:flex; flex-direction:column; gap:24px;">
-                        <p style="max-width:60ch; font-size:15px; line-height:1.7; color:#777; font-family:'Inter',sans-serif;">When we began Unityaliving, Indore was still a city that people described in terms of what it might become. We chose to build here precisely because of that — a city on the edge of its own growth deserves homes built with patience rather than haste.</p>
-                        <blockquote style="position:relative; border-left:2px solid #e9e9e9; padding-left:36px; margin:0; font-family:'Poppins', sans-serif; font-size:17px; line-height:1.6; font-style:italic; color:#111;"><span style="position:absolute; left:8px; top:0; font-family:'Instrument Serif', serif; font-size:32px; line-height:1; color:rgba(17,17,17,0.06);">“</span>A home is not sold in an afternoon — we build for the second part.</blockquote>
+                        <p style="max-width:60ch; font-size:15px; line-height:1.75; color:#777; font-family:'Inter',sans-serif;">When we began Unitya Living, Indore was still a city that people described in terms of what it might become. We chose to build here precisely because of that — a city on the edge of its own growth deserves homes built with patience rather than haste.</p>
+                        <blockquote style="position:relative; border-left:2px solid #e9e9e9; padding-left:36px; margin:0; font-family:'Poppins', sans-serif; font-size:17px; line-height:1.6; font-style:italic; color:#111;"><span class="founder-quote-mark">❝</span>A home is not sold in an afternoon — we build for the second part.</blockquote>
+                        <p style="max-width:56ch; font-size:15px; line-height:1.75; color:#777; font-family:'Inter',sans-serif;">That approach affects every choice we make: the materials we specify, the pace we set and the way we measure success long after handover day.</p>
                     </div>
                     <div style="margin-top:40px; border-top:1px solid #e9e9e9; padding-top:24px;">
                         <p style="font-family:'Poppins', sans-serif; font-size:20px; color:#111;">Rohan Astoliya</p>

@@ -75,6 +75,11 @@
         .latest-blog-dark-outer:hover, .latest-blog-dark-outer2:hover { transform: translateY(-4px); }
         .latest-blog-dark-outer .overlay-main, .latest-blog-dark-outer2 .overlay-main { transition: opacity 0.4s ease; }
         .latest-blog-dark-outer:hover .overlay-main, .latest-blog-dark-outer2:hover .overlay-main { opacity: 0.45; }
+        /* Disable hover for left-half top card (5 Reasons) */
+        .col-lg-6:first-child .latest-blog-dark-outer:first-child,
+        .col-lg-6:first-child .latest-blog-dark-outer:first-child .overlay-main { transition: none; }
+        .col-lg-6:first-child .latest-blog-dark-outer:first-child:hover { transform: none; }
+        .col-lg-6:first-child .latest-blog-dark-outer:first-child:hover .overlay-main { opacity: 0.04; }
     </style>
 
 </head>

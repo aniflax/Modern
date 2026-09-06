@@ -69,6 +69,11 @@
         .approach-label:before { background-color: transparent; position: absolute; content: ""; width: 30px; height: 30px; left: -15px; top: -10px; border: 3px solid #111; opacity: 0.15; z-index: -1; }
         html { scroll-behavior: smooth; }
         #about, #founder, #services, #projects, #media, #contact { scroll-margin-top: 90px; }
+        /* Home blog cards — hover animation (lift + shadow + overlay) */
+        .latest-blog-dark-outer, .latest-blog-dark-outer2 { transition: transform 0.45s cubic-bezier(0.22,1,0.36,1), box-shadow 0.45s ease; }
+        .latest-blog-dark-outer:hover, .latest-blog-dark-outer2:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 14px 30px rgba(0,0,0,0.12); }
+        .latest-blog-dark-outer .overlay-main, .latest-blog-dark-outer2 .overlay-main { transition: opacity 0.4s ease; }
+        .latest-blog-dark-outer:hover .overlay-main, .latest-blog-dark-outer2:hover .overlay-main { opacity: 0.65; }
     </style>
 
 </head>

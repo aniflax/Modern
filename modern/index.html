@@ -95,9 +95,14 @@
         .process-reveal.in-view, .process-step.in-view { opacity: 1; transform: translateY(0); }
         .process-step { transition-delay: var(--d, 0ms); }
         .process-step:hover { transition-delay: 0ms !important; transform: translateY(-6px); }
-        .process-icon { width: 40px; height: 40px; display: block; object-fit: contain; margin: 0 auto; transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
-        .process-step:hover .process-icon { transform: translateY(-4px) scale(1.08); }
+        .process-icon { width: 26px; height: 26px; display: block; object-fit: contain; margin: 0 auto; }
+        .process-icon-dot { width: 56px; height: 56px; border-radius: 50%; background: #fff; border: 1px solid #e7e7e7; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 4px 14px rgba(0,0,0,0.06); transition: box-shadow 0.4s ease, transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+        .process-step:hover .process-icon-dot { box-shadow: 0 10px 24px rgba(0,0,0,0.12); transform: translateY(-4px); }
         .process-step { text-align: center; }
+        .process-grid { position: relative; }
+        .process-line { position: absolute; top: 28px; left: 0; right: 0; height: 1px; background: #e3e3e3; }
+        .process-line-fill { position: absolute; top: 28px; left: 0; height: 1px; width: 0; background: #111; transition: width 1.4s cubic-bezier(0.22,1,0.36,1) 0.3s; }
+        @media (max-width: 767px) { .process-line, .process-line-fill { display: none; } }
         /* Lifestyle card on hero — hidden on mobile as Unitya */
         @media (max-width: 768px){ .unitya-lifestyle-hero-card { display:none !important; } }
     </style>
@@ -531,24 +536,34 @@
                         <span>Our Method</span>
                         <h2>The Process</h2>
                     </div>
-                    <div style="margin-top:56px; display:grid; gap:40px 32px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                    <div class="process-grid" style="margin-top:56px; display:grid; gap:40px 32px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                        <div class="process-line"></div>
+                        <div class="process-line-fill"></div>
                         <div class="process-step" style="--d:0ms;">
-                            <img src="images/process/discover.svg" alt="Discover icon" class="process-icon">
+                            <div class="process-icon-dot">
+                                <img src="images/process/discover.svg" alt="Discover icon" class="process-icon">
+                            </div>
                             <h3 class="display" style="margin-top:16px; font-size:16px; color:#111;">DISCOVER</h3>
                             <p style="margin-top:8px; font-size:13px; line-height:1.6; color:#777; font-family:'Inter',sans-serif;">Understand the vision.</p>
                         </div>
                         <div class="process-step" style="--d:120ms;">
-                            <img src="images/process/plan.svg" alt="Plan icon" class="process-icon">
+                            <div class="process-icon-dot">
+                                <img src="images/process/plan.svg" alt="Plan icon" class="process-icon">
+                            </div>
                             <h3 class="display" style="margin-top:16px; font-size:16px; color:#111;">PLAN</h3>
                             <p style="margin-top:8px; font-size:13px; line-height:1.6; color:#777; font-family:'Inter',sans-serif;">Shape the direction.</p>
                         </div>
                         <div class="process-step" style="--d:240ms;">
-                            <img src="images/process/design.svg" alt="Design icon" class="process-icon">
+                            <div class="process-icon-dot">
+                                <img src="images/process/design.svg" alt="Design icon" class="process-icon">
+                            </div>
                             <h3 class="display" style="margin-top:16px; font-size:16px; color:#111;">DESIGN</h3>
                             <p style="margin-top:8px; font-size:13px; line-height:1.6; color:#777; font-family:'Inter',sans-serif;">Bring ideas to life.</p>
                         </div>
                         <div class="process-step" style="--d:360ms;">
-                            <img src="images/process/build.svg" alt="Build icon" class="process-icon">
+                            <div class="process-icon-dot">
+                                <img src="images/process/build.svg" alt="Build icon" class="process-icon">
+                            </div>
                             <h3 class="display" style="margin-top:16px; font-size:16px; color:#111;">BUILD</h3>
                             <p style="margin-top:8px; font-size:13px; line-height:1.6; color:#777; font-family:'Inter',sans-serif;">Build with precision.</p>
                         </div>
@@ -1176,6 +1191,8 @@
                 var els = document.querySelectorAll('.process-reveal, .process-step');
                 if (!('IntersectionObserver' in window)) {
                     els.forEach(function (el) { el.classList.add('in-view'); });
+                    var fill = document.querySelector('.process-line-fill');
+                    if (fill) fill.style.width = '100%';
                     return;
                 }
                 var io = new IntersectionObserver(function (entries) {
@@ -1184,6 +1201,17 @@
                     });
                 }, { threshold: 0.18 });
                 els.forEach(function (el) { io.observe(el); });
+
+                var grid = document.querySelector('.process-grid');
+                var fill = document.querySelector('.process-line-fill');
+                if (grid && fill) {
+                    var io2 = new IntersectionObserver(function (entries) {
+                        entries.forEach(function (e) {
+                            if (e.isIntersecting) { fill.style.width = '100%'; io2.unobserve(grid); }
+                        });
+                    }, { threshold: 0.3 });
+                    io2.observe(grid);
+                }
             }
             if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
             else run();

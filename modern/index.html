@@ -101,8 +101,7 @@
         .process-step { text-align: center; }
         .process-grid { position: relative; }
         .process-line { position: absolute; top: 28px; left: 0; right: 0; height: 1px; background: #e3e3e3; }
-        .process-line-fill { position: absolute; top: 28px; left: 0; height: 1px; width: 0; background: #111; }
-        @media (max-width: 767px) { .process-line, .process-line-fill { display: none; } }
+        @media (max-width: 767px) { .process-line { display: none; } }
         /* Lifestyle card on hero — hidden on mobile as Unitya */
         @media (max-width: 768px){ .unitya-lifestyle-hero-card { display:none !important; } }
     </style>
@@ -538,7 +537,6 @@
                     </div>
                     <div class="process-grid" style="margin-top:56px; display:grid; gap:40px 32px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
                         <div class="process-line"></div>
-                        <div class="process-line-fill"></div>
                         <div class="process-step" style="--d:0ms;">
                             <div class="process-icon-dot">
                                 <img src="images/process/discover.svg" alt="Discover icon" class="process-icon">
@@ -1191,8 +1189,6 @@
                 var els = document.querySelectorAll('.process-reveal, .process-step');
                 if (!('IntersectionObserver' in window)) {
                     els.forEach(function (el) { el.classList.add('in-view'); });
-                    var fill = document.querySelector('.process-line-fill');
-                    if (fill) fill.style.width = '100%';
                     return;
                 }
                 var io = new IntersectionObserver(function (entries) {
@@ -1201,22 +1197,6 @@
                     });
                 }, { threshold: 0.18 });
                 els.forEach(function (el) { io.observe(el); });
-
-                var grid = document.querySelector('.process-grid');
-                var fill = document.querySelector('.process-line-fill');
-                if (grid && fill) {
-                    fill.style.transition = 'none';
-                    function updateLine() {
-                        var rect = grid.getBoundingClientRect();
-                        var vh = window.innerHeight || document.documentElement.clientHeight;
-                        var total = rect.height || 1;
-                        var done = Math.min(Math.max((vh - rect.top) / total, 0), 1);
-                        fill.style.width = (done * 100) + '%';
-                    }
-                    updateLine();
-                    window.addEventListener('scroll', updateLine, { passive: true });
-                    window.addEventListener('resize', updateLine);
-                }
             }
             if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
             else run();

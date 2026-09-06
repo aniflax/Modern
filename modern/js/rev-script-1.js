@@ -27,11 +27,11 @@ tpj(document).ready(function() {
                 },
                 arrows: {
                     style: "new-bullet-bar",
-                    enable: true,
+                    enable: false,
                     hide_onmobile: true,
                     hide_under: 778,
-                    hide_onleave: false,
-                    tmp: '<div class="tp-title-wrap">  	<div class="tp-arr-imgholder"></div>    <div class="tp-arr-img-over"></div> </div>',
+                    hide_onleave: true,
+                    tmp: '',
                     left: {
                         h_align: "left",
                         v_align: "center",

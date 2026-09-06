@@ -64,6 +64,9 @@
         }
         /* hide arrows if inline style injects them */
         .tp-bullet { }
+        /* Our approach circle — same as Services heading */
+        .approach-label { position: relative; display: inline-block; z-index: 1; }
+        .approach-label:before { background-color: transparent; position: absolute; content: ""; width: 30px; height: 30px; left: -15px; top: -10px; border: 3px solid #111; opacity: 0.15; z-index: -1; }
     </style>
 
 </head>
@@ -394,7 +397,7 @@
                     <div class="section-content">
                         <div class="row">
                             <div class="col-lg-5 col-md-12 m-b30 text-black">
-                                <span class="font-12 font-weight-700 d-block m-b10 text-uppercase" style="letter-spacing:4px; color:#111;">Our approach</span>
+                                <span class="approach-label font-12 font-weight-700 d-block m-b10 text-uppercase" style="letter-spacing:4px; color:#111;">Our approach</span>
                                 <h2 class="font-40 text-uppercase" style="line-height:1; letter-spacing:-1px;">
                                     <span style="font-weight:800;">WE DESIGN</span> <span style="font-weight:300;">SPACES</span><br><span style="font-weight:300;">YOU LIVE</span> <span style="font-weight:800;">THE VISION.</span>
                                 </h2>

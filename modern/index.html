@@ -362,17 +362,22 @@
                         var imgEl = document.getElementById('unitya-lifestyle-img');
                         var card = document.getElementById('unitya-lifestyle-card');
                         if(!textEl || !imgEl || !card) return;
-                        setInterval(function(){
-                            idx = (idx + 1) % items.length;
-                            textEl.style.opacity = '0';
-                            imgEl.style.opacity = '0';
+                        function schedule(){
+                            var delay = (idx === 0 || idx === 1) ? 5000 : 3000;
                             setTimeout(function(){
-                                textEl.textContent = items[idx].text;
-                                imgEl.src = items[idx].img;
-                                textEl.style.opacity = '1';
-                                imgEl.style.opacity = '1';
-                            }, 250);
-                        }, 3000);
+                                idx = (idx + 1) % items.length;
+                                textEl.style.opacity = '0';
+                                imgEl.style.opacity = '0';
+                                setTimeout(function(){
+                                    textEl.textContent = items[idx].text;
+                                    imgEl.src = items[idx].img;
+                                    textEl.style.opacity = '1';
+                                    imgEl.style.opacity = '1';
+                                    schedule();
+                                }, 250);
+                            }, delay);
+                        }
+                        schedule();
                     })();
                 </script>
             </div>

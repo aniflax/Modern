@@ -743,6 +743,43 @@
             </div>
             <!-- BLOG SECTION END -->
 
+            <!-- UNITYA YOUTUBE VIDEO SECTION — exact copy from Unitya/src/components/site/unityaliving-sections.tsx:150 -->
+            <section style="background:#fff; padding: 40px 0;">
+                <div class="container" style="max-width:1400px; margin:0 auto; padding:0 24px;">
+                    <div style="overflow:hidden; border-radius:20px; border:1px solid #e9e9e9; background:#000;">
+                        <div id="unitya-video-wrap" style="position:relative; aspect-ratio:32/9; width:100%; background:#000;">
+                            <button id="unitya-video-play" type="button" aria-label="Play video" style="position:absolute; inset:0; width:100%; height:100%; border:0; padding:0; background:transparent; cursor:pointer;">
+                                <img src="images/youtube.png" alt="Youtube video thumbnail" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">
+                                <span style="position:absolute; inset:0; background:rgba(0,0,0,0.1); transition:background 0.3s;"></span>
+                                <span style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); transition:transform 0.3s;">
+                                    <svg width="68" height="48" viewBox="0 0 68 48" style="display:block;">
+                                        <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path>
+                                        <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <iframe id="unitya-video-iframe" style="display:none; position:absolute; inset:0; width:100%; height:100%; border:0;" src="" title="Youtube Video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <script>
+                (function(){
+                    var btn = document.getElementById('unitya-video-play');
+                    var iframe = document.getElementById('unitya-video-iframe');
+                    if(btn && iframe){
+                        btn.addEventListener('click', function(){
+                            btn.style.display='none';
+                            iframe.style.display='block';
+                            iframe.src='https://www.youtube.com/embed/HWvblfSkkDY?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+                        });
+                        btn.addEventListener('mouseenter', function(){ btn.querySelector('span').style.transform='translate(-50%,-50%) scale(1.05)'; });
+                        btn.addEventListener('mouseleave', function(){ btn.querySelector('span').style.transform='translate(-50%,-50%) scale(1)'; });
+                    }
+                })();
+            </script>
+            <!-- UNITYA YOUTUBE VIDEO SECTION END -->
+
             <!-- COMPANY DETAIL SECTION START -->
             <div class="section-full p-t80 p-b50 overlay-wraper bg-top-center bg-parallax" data-stellar-background-ratio="0.5" style="background-image:url(images/background/bg-11.jpg);">
                 <div class="overlay-main opacity-08 bg-black"></div>

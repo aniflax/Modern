@@ -75,6 +75,11 @@
         .latest-blog-dark-outer:hover, .latest-blog-dark-outer2:hover { transform: translateY(-4px); }
         .latest-blog-dark-outer .overlay-main, .latest-blog-dark-outer2 .overlay-main { transition: opacity 0.4s ease; }
         .latest-blog-dark-outer:hover .overlay-main, .latest-blog-dark-outer2:hover .overlay-main { opacity: 0.45; }
+        /* Home latest project cards — whole card hover animation */
+        .owl-carousel-filter .item { transition: transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+        .owl-carousel-filter .item:hover { transform: translateY(-6px); }
+        .owl-carousel-filter .item .wt-img-effect img { transition: transform 1.2s cubic-bezier(0.22,1,0.36,1); }
+        .owl-carousel-filter .item:hover .wt-img-effect img { transform: scale(1.08); }
         /* Lifestyle card on hero — hidden on mobile as Unitya */
         @media (max-width: 768px){ .unitya-lifestyle-hero-card { display:none !important; } }
     </style>
@@ -1176,6 +1181,21 @@
     <script src="js/app.js"></script>
     <!-- CANVAS EFFECT   -->
 
+    <script>
+        /* Home Latest Project — whole card clickable */
+        (function () {
+            document.querySelectorAll('.owl-carousel-filter .item').forEach(function (item) {
+                var link = item.querySelector('a[href*="project-detail"]');
+                if (!link) return;
+                var href = link.getAttribute('href');
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', function (e) {
+                    if (e.target.closest('a')) return;
+                    window.location.href = href;
+                });
+            });
+        })();
+    </script>
 
 </body>
 

@@ -678,9 +678,9 @@ All JavaScript fuctions Start
     }
 
 
-    // > page loader function by = custom.js ========================= //		
+    // > page loader DISABLED — direct load, no logo (removed per requirement) //		
     function page_loader() {
-        $('.loading-area').fadeOut(1000)
+        $('.loading-area').remove(); $('body').removeClass('loading');
     };
 
     /*--------------------------------------------------------------------------------------------
@@ -799,11 +799,11 @@ All JavaScript fuctions Start
             type: 'POST',
             dataType: 'JSON',
             beforeSend: function() {
-                jQuery('.loading-area').show();
+                // loader disabled — no overlay
             },
 
             success: function(data) {
-                jQuery('.loading-area').hide();
+                // loader disabled
                 if (data['success']) {
                     jQuery("<div class='alert alert-success'>" + data['message'] + "</div>").insertBefore('form.cons-contact-form');
                 } else {

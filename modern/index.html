@@ -90,6 +90,14 @@
         .lp-card-foot .meta { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #999; font-family: 'Inter', sans-serif; }
         .lp-card-view { display: inline-flex; align-items: center; justify-content: center; padding: 8px 18px; background: transparent; border: 1px solid #111; border-radius: 999px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; color: #111; font-family: 'Inter', sans-serif; transition: background 0.3s ease, color 0.3s ease; }
         .lp-card:hover .lp-card-view { background: #111; color: #fff; }
+        /* The Process section — new */
+        .process-reveal, .process-step { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+        .process-reveal.in-view, .process-step.in-view { opacity: 1; transform: translateY(0); }
+        .process-step { transition-delay: var(--d, 0ms); }
+        .process-step:hover { transition-delay: 0ms !important; transform: translateY(-6px); }
+        .process-step-num { font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1; color: #111; }
+        .process-step-bar { width: 36px; height: 2px; background: #111; transition: width 0.5s cubic-bezier(0.22,1,0.36,1); }
+        .process-step:hover .process-step-bar { width: 56px; }
         /* Lifestyle card on hero — hidden on mobile as Unitya */
         @media (max-width: 768px){ .unitya-lifestyle-hero-card { display:none !important; } }
     </style>
@@ -575,6 +583,55 @@
                 </div>
             </section>
             <!-- UNITYA INTERIOR + PROCESS END -->
+
+            <!-- PROCESS SECTION START -->
+            <section style="background:#fafafa; border-top:1px solid #eee; padding:96px 0;">
+                <div style="max-width:1400px; margin:0 auto; padding:0 24px;">
+                    <div class="process-reveal">
+                        <p style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#777; font-family:'Inter',sans-serif;">Our method</p>
+                        <h2 class="display" style="margin-top:14px; font-size: clamp(1.8rem,3.5vw,2.6rem); color:#111;">The Process</h2>
+                    </div>
+                    <div style="margin-top:56px; display:grid; gap:40px 32px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                        <div class="process-step" style="--d:0ms;">
+                            <div style="display:flex; align-items:baseline; gap:12px;">
+                                <span class="process-step-num">01</span>
+                                <span style="color:#999; font-family:'Inter',sans-serif;">—</span>
+                                <h3 class="display" style="font-size:17px; color:#111; margin:0;">Discover</h3>
+                            </div>
+                            <div class="process-step-bar" style="margin-top:18px;"></div>
+                            <p style="margin-top:14px; font-size:14px; line-height:1.7; color:#777; font-family:'Inter',sans-serif;">We listen, study the site and define the brief.</p>
+                        </div>
+                        <div class="process-step" style="--d:120ms;">
+                            <div style="display:flex; align-items:baseline; gap:12px;">
+                                <span class="process-step-num">02</span>
+                                <span style="color:#999; font-family:'Inter',sans-serif;">—</span>
+                                <h3 class="display" style="font-size:17px; color:#111; margin:0;">Plan</h3>
+                            </div>
+                            <div class="process-step-bar" style="margin-top:18px;"></div>
+                            <p style="margin-top:14px; font-size:14px; line-height:1.7; color:#777; font-family:'Inter',sans-serif;">We shape the ideas, structure the process and set the direction.</p>
+                        </div>
+                        <div class="process-step" style="--d:240ms;">
+                            <div style="display:flex; align-items:baseline; gap:12px;">
+                                <span class="process-step-num">03</span>
+                                <span style="color:#999; font-family:'Inter',sans-serif;">—</span>
+                                <h3 class="display" style="font-size:17px; color:#111; margin:0;">Design</h3>
+                            </div>
+                            <div class="process-step-bar" style="margin-top:18px;"></div>
+                            <p style="margin-top:14px; font-size:14px; line-height:1.7; color:#777; font-family:'Inter',sans-serif;">Drawings, materials and detail resolved together.</p>
+                        </div>
+                        <div class="process-step" style="--d:360ms;">
+                            <div style="display:flex; align-items:baseline; gap:12px;">
+                                <span class="process-step-num">04</span>
+                                <span style="color:#999; font-family:'Inter',sans-serif;">—</span>
+                                <h3 class="display" style="font-size:17px; color:#111; margin:0;">Build</h3>
+                            </div>
+                            <div class="process-step-bar" style="margin-top:18px;"></div>
+                            <p style="margin-top:14px; font-size:14px; line-height:1.7; color:#777; font-family:'Inter',sans-serif;">Construction managed with precision and care.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- PROCESS SECTION END -->
 
             <!-- LATEST PRJECTS SLIDER START -->
             <div id="projects" class="section-full p-t80 p-lr80 latest_project-outer square_shape3" style="padding-bottom:96px;">
@@ -1127,6 +1184,27 @@
     <!-- CANVAS EFFECT   -->
     <script src="js/app.js"></script>
     <!-- CANVAS EFFECT   -->
+
+    <script>
+        /* The Process section — scroll-triggered reveal */
+        (function () {
+            function run() {
+                var els = document.querySelectorAll('.process-reveal, .process-step');
+                if (!('IntersectionObserver' in window)) {
+                    els.forEach(function (el) { el.classList.add('in-view'); });
+                    return;
+                }
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (e) {
+                        if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+                    });
+                }, { threshold: 0.18 });
+                els.forEach(function (el) { io.observe(el); });
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+            else run();
+        })();
+    </script>
 
 </body>
 

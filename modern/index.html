@@ -101,7 +101,7 @@
         .process-step { text-align: center; }
         .process-grid { position: relative; }
         .process-line { position: absolute; top: 28px; left: 0; right: 0; height: 1px; background: #e3e3e3; }
-        .process-line-fill { position: absolute; top: 28px; left: 0; height: 1px; width: 0; background: #111; transition: width 1.4s cubic-bezier(0.22,1,0.36,1) 0.3s; }
+        .process-line-fill { position: absolute; top: 28px; left: 0; height: 1px; width: 0; background: #111; }
         @media (max-width: 767px) { .process-line, .process-line-fill { display: none; } }
         /* Lifestyle card on hero — hidden on mobile as Unitya */
         @media (max-width: 768px){ .unitya-lifestyle-hero-card { display:none !important; } }
@@ -1205,12 +1205,17 @@
                 var grid = document.querySelector('.process-grid');
                 var fill = document.querySelector('.process-line-fill');
                 if (grid && fill) {
-                    var io2 = new IntersectionObserver(function (entries) {
-                        entries.forEach(function (e) {
-                            if (e.isIntersecting) { fill.style.width = '100%'; io2.unobserve(grid); }
-                        });
-                    }, { threshold: 0.3 });
-                    io2.observe(grid);
+                    fill.style.transition = 'none';
+                    function updateLine() {
+                        var rect = grid.getBoundingClientRect();
+                        var vh = window.innerHeight || document.documentElement.clientHeight;
+                        var total = rect.height || 1;
+                        var done = Math.min(Math.max((vh - rect.top) / total, 0), 1);
+                        fill.style.width = (done * 100) + '%';
+                    }
+                    updateLine();
+                    window.addEventListener('scroll', updateLine, { passive: true });
+                    window.addEventListener('resize', updateLine);
                 }
             }
             if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
